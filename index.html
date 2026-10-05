@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Your App – Download for Android</title>
+<title>CarGo – Download for Android</title>
 <meta name="description" content="Download Your App for Android.">
 <style>
   /* ============ EDIT ME: colours ============ */
@@ -49,12 +49,20 @@
   .phone{width:min(300px,72vw);aspect-ratio:9/19;margin:0 auto;border-radius:48px;padding:10px;
     background:linear-gradient(145deg,#3a3a3c,#111);box-shadow:0 40px 80px rgba(0,0,0,.25),inset 0 0 0 2px #555}
   .screen{width:100%;height:100%;border-radius:39px;overflow:hidden;position:relative;
-    background:linear-gradient(160deg,#4facfe,#7b5cff 55%,#ff6ac1);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:24px}
-  .screen::before{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);width:90px;height:26px;border-radius:20px;background:#000}
-  .icon{width:84px;height:84px;border-radius:20px;background:rgba(255,255,255,.95);display:grid;place-items:center;
-    font-size:40px;font-weight:700;color:#7b5cff;box-shadow:0 10px 30px rgba(0,0,0,.2)}
-  .screen h3{margin-top:18px;font-size:22px;letter-spacing:-.02em}
-  .screen span{font-size:13px;opacity:.85}
+    background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center}
+  .screen::before{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);width:90px;height:26px;border-radius:20px;background:#000;z-index:2}
+
+  /* screenshot: contain = zoomed out, whole image visible.
+     Change "contain" to "cover" to fill the screen edge to edge. */
+  .shot{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+    background:#000;
+  }
 
   section{padding:96px 22px}
   .wrap{max-width:980px;margin:0 auto}
@@ -116,12 +124,12 @@
     <span class="meta">Version 1.0.0 · 90 MB · Android 8.0 or later</span>
   </div>
 
-  <div class="stage" aria-hidden="true">
-    <div class="phone"><div class="screen">
-      <div class="icon">Y</div>
-      <h3>CarGo</h3>
-      <span><img class="shot" src="screenshot.png" alt="CarGo app screenshot"></span>
-    </div></div>
+  <div class="stage">
+    <div class="phone">
+      <div class="screen">
+        <img class="shot" src="screenshot.png" alt="CarGo app screenshot">
+      </div>
+    </div>
   </div>
 </header>
 
